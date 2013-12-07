@@ -20,6 +20,9 @@ page "/exemplars/*", :layout => :exemplar
 # With no layout
 page "*.css", :layout => false
 
+# Meta redirects
+# redirect 'index.html', to: 'prototypes/sample'
+
 # A path which all have the same layout
 # with_layout :admin do
 #   page "/admin/*"
