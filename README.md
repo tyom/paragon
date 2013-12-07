@@ -16,4 +16,10 @@ Frameworks
 Paragon is built on top of [Middleman](https://github.com/middleman/middleman). Bundled with [Slim Templates](https://github.com/slim-template/slim), [Bourbon](https://github.com/thoughtbot/bourbon), [Neat](https://github.com/thoughtbot/neat) by default. Those can be extended or replaced with little effort.
 
 
-Optionally included: Foundation 5 and AngularJS via ([Bower](https://github.com/bower/bower)). Run `bower install`.
+Optionally included: Foundation 5 and AngularJS via ([Bower](https://github.com/bower/bower)).
+
+
+Usage
+=====
+
+The best way to use Paragon is to `git clone git@github.com:tyom/paragon.git ~/.middleman`. This will add itself to available Middleman’s templates. Then initialise a project with `middleman init <project-name> -T paragon`. This create all files, run bundle and leave the git repo out so a fresh repo can be created. Run `bower install` to get client libraries: AngularJS and Foundation, or add your own.
