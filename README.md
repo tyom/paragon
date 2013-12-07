@@ -22,4 +22,9 @@ Optionally included: Foundation 5 and AngularJS via ([Bower](https://github.com/
 Usage
 =====
 
-The best way to use Paragon is to `git clone git@github.com:tyom/paragon.git ~/.middleman`. This will add itself to available Middleman’s templates. Then initialise a project with `middleman init <project-name> -T paragon`. This create all files, run bundle and leave the git repo out so a fresh repo can be created. Run `bower install` to get client libraries: AngularJS and Foundation, or add your own.
+The best way to use Paragon is to install it as a Middleman template:
+```
+git clone --depth=1 git@github.com:tyom/paragon.git ~/.middleman/paragon && rm -rf ~/.middleman/paragon/.git
+```
+
+Then initialise a project with `middleman init <project-name> -T paragon`. This create all files, run bundle and leave the git repo out so a fresh repo can be created. Run `bower install` to get client libraries: AngularJS and Foundation, or add your own.
