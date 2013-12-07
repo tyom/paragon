@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    title = current_page.data.title || 'Exemplar'
+    meta name='viewport' content='width=device-width'
+    = stylesheet_link_tag 'main'
+    = stylesheet_link_tag current_page.data.stylesheets if current_page.data.stylesheets
+    = yield_content :post_head
+
+  body class="#{yield_content(:body_class)}"
+    = yield
+
+    = javascript_include_tag  'all'
+    = javascript_include_tag current_page.data.javascripts if current_page.data.javascripts
+    = yield_content :post_body

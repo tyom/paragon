@@ -1,0 +1,9 @@
+{
+  "name": "paragon",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "foundation": "~5.0.2",
+    "angular": "~1.2.2"
+  }
+}

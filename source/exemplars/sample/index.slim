@@ -1,0 +1,11 @@
+---
+title: Example
+---
+
+sass:
+  @import 'components'
+
+= partial 'components/topbar',
+    locals: load_yaml('~/prototypes/sample/topbar')
+= partial 'components/subnav',
+    locals: load_yaml('~/prototypes/sample/subnav')

@@ -1,0 +1,10 @@
+- label = label || nil
+- nav_items = nav_items || []
+
+- if nav_items.length
+  dl.subnav
+    - if label
+      dt._label= label
+
+    - nav_items.each do |item|
+      dd: a= item

@@ -1,0 +1,11 @@
+- name = name || 'Sample'
+- nav_items = nav_items || []
+
+nav.topbar
+  - if name
+    a._name= name
+
+  - if nav_items.length
+    ul._navigation
+      - nav_items.each do |item|
+        li: a= item

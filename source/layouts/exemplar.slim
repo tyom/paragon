@@ -1,0 +1,15 @@
+---
+page_class: 'exemplar'
+---
+
+- content_for :body_class, 'exemplar'
+
+- content_for :post_head do
+  = stylesheet_link_tag 'exemplar'
+
+- wrap_layout :layout do
+  .exemplar-instance
+    - if current_page.data.title
+      h1= current_page.data.title
+    ._stage
+      == yield

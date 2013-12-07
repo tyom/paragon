@@ -1,0 +1,40 @@
+@import 'bourbon';
+
+.topbar {
+  @include clearfix;
+  background: rgba(black, .2);
+
+  ._name {
+    font-size: 18px;
+    margin-right: 20px;
+    padding: 10px 30px;
+  }
+
+  ._navigation {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a:hover {
+      background: rgba(black, .05);
+    }
+  }
+
+  ._name,
+  ._navigation,
+  ._navigation li {
+    float: left;
+  }
+
+  a {
+    padding: 10px;
+    line-height: 20px;
+    display: block;
+    cursor: pointer;
+    color: #555;
+
+    &:hover {
+      color: #333;
+    }
+  }
+}
