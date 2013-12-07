@@ -62,6 +62,13 @@ end
 
 # Build-specific configuration
 configure :build do
+  # Middleman Livereload fails to reload CSS only with Sass partials.
+  # It works correctly with non-underscore-prefixed
+  # https://github.com/middleman/middleman-livereload/issues/3
+
+  # Ignore partials for build
+  ignore 'stylesheets/components/*'
+
   # activate :directory_indexes
 
   # For example, change the Compass output style for deployment
