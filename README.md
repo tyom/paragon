@@ -27,4 +27,24 @@ The best way to use Paragon is to install it as a Middleman template:
 git clone --depth=1 git@github.com:tyom/paragon.git ~/.middleman/paragon && rm -rf ~/.middleman/paragon/.git
 ```
 
-Then initialise a project with `middleman init <project-name> -T paragon`. This create all files, run bundle and leave the git repo out so a fresh repo can be created. Run `bower install` to get client libraries: AngularJS and Foundation, or add your own.
+Then initialise a project with `middleman init <project-name> -T paragon`. This create all files, run bundle and leave the git repo out so a fresh repo can be created.
+
+### Inside new project
+
+```
+bower install
+````
+
+Install client-side libraries: AngularJS and Foundation (add your own).
+
+```
+middleman
+```
+
+Run local server.
+
+```
+middleman build
+```
+
+Build static website.
