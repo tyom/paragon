@@ -1,0 +1,17 @@
+---
+title: Form Inputs
+description: Typical form inputs
+---
+
+= exemplar_for 'form/input', title: 'Text input'
+
+= exemplar_for nil, title: 'Radio buttons' do
+  erb:
+    <p>
+      <input type="radio" name="vote" id="agree">
+      <label for="agree">Agree</label>
+    </p>
+    <p>
+      <input type="radio" name="vote" id="disagree">
+      <label for="disagree">Disagree</label>
+    </p>

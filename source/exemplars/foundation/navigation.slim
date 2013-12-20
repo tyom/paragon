@@ -1,0 +1,48 @@
+---
+title: 'Foundation: Navigational Components'
+stylesheets:
+  - exemplars/foundation/navigation
+---
+
+= exemplar_for 'foundation/off-canvas',
+  title: 'Off Canvas',
+  description: 'Example from <a href="http://foundation.zurb.com/docs/components/offcanvas.html">Foundation website</a>'
+
+= exemplar_for 'foundation/topbar',
+  title: 'Top Bar',
+  description: 'example from <a href="http://foundation.zurb.com/docs/components/topbar.html">Foundation website</a>'
+
+= exemplar_for 'foundation/sidenav',
+  title: 'Side Nav',
+  description: 'Example from <a href="http://foundation.zurb.com/docs/components/sidenav.html">Foundation website</a>'
+
+= exemplar_for 'foundation/subnav',
+  title: 'Sub Nav',
+  description: 'Example from <a href="http://foundation.zurb.com/docs/components/subnav.html">Foundation website</a>'
+
+= exemplar_for nil,
+  title: 'Breadcrumbs',
+  description: 'Example from <a href="http://foundation.zurb.com/docs/components/subnav.html">Foundation website</a>' do
+
+    ul.breadcrumbs
+      li: a Home
+      li: a Features
+      li.unavailable: a Gene Splicing
+      li.current: a Cloning
+
+
+= exemplar_for nil,
+  title: 'Pagination',
+  description: 'Example from <a href="http://foundation.zurb.com/docs/components/pagination.html">Foundation website</a>' do
+
+    ul.pagination
+      li.arrow.unavailable: a &laquo;
+      li.current :a 1
+      li :a 2
+      li :a 3
+      li :a 4
+      li.unavailable :a &hellip;
+      li :a 12
+      li :a 13
+      li.arrow: a &raquo;
+

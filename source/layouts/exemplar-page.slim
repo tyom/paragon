@@ -1,0 +1,14 @@
+- content_for :head do
+  = stylesheet_link_tag 'exemplar'
+
+- append_class :body_class, 'exemplar-page'
+
+- wrap_layout :layout do
+  = partial 'exemplars/nav', locals: { section: 'exemplars' }
+
+  section.exemplar-container
+    header
+      h1= current_page.data.title
+      p= current_page.data.description
+
+    = yield

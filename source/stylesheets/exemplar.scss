@@ -1,23 +1,187 @@
-.exemplar {
-  padding: 20px;
-  background: #4d5a6d;
+@import 'bourbon';
+@import 'neat';
+@import 'pygments/github';
+
+$light-grey: #dedce3;
+$sidebar-width: 200px;
+
+.exemplar-page > .exemplar,
+.exemplar-page > .exemplars {
+  @include outer-container;
 }
 
-.exemplar-instance {
-  > h1 {
+%section-header {
+  font: 100 1.7rem 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: .5rem 0;
+  padding-bottom: .5rem;
+  color: #a39faf;
+  border-bottom: 2px solid rgba(#877aaf, 0.1);
+  letter-spacing: .1rem;
+}
+
+%section-subheader {
+  color: #999;
+  margin: .5rem 0 0;
+}
+
+.exemplar-section {
+  > header {
+    h2 {
+      @extend %section-header;
+    }
+
+    p {
+      @extend %section-subheader;
+    }
+  }
+}
+
+.exemplar-container {
+  > header {
+    margin-bottom: 2rem;
     -webkit-font-smoothing: antialiased;
+
+    > h1 {
+      @extend %section-header;
+      font-size: 2.7rem;
+    }
+
+    > p {
+      @extend %section-subheader;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.exemplar-page.m-list {
+  .exemplar-container {
+    header > h1 {
+      border: none;
+      padding: 0;
+      color: #af9b7a;
+      letter-spacing: .2rem;
+      font-weight: 200;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+}
+
+.exemplar-page {
+  padding: 20px;
+  background: lighten($light-grey, 5);
+  padding-left: $sidebar-width + 20;
+  color: #444;
+
+  > nav {
+    @include position(fixed, 0 0 0 20px);
+    width: $sidebar-width - 20;
+
+    ul {
+      @include clearfix;
+      list-style: none;
+      font-size: .9rem;
+      line-height: 1.2;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin: .2rem 0;
+    }
+
+    a {
+      display: block;
+      padding: 8px 10px;
+      color: #777;
+
+      &:hover {
+        color: inherit;
+        background: rgba(black, 0.04);
+        text-decoration: none;
+      }
+    }
+
+    li.s-selected a,
+    a:active {
+      color: inherit;
+      background: rgba(black, 0.1);
+      text-decoration: none;
+    }
+  }
+
+  > nav + .exemplars {
+    margin-left: $sidebar-width + 20;
+  }
+}
+
+.exemplar {
+  overflow: hidden;
+  margin: 2rem 0 3rem;
+  border-radius: 0 0 .4rem .4rem;
+
+  > ._title {
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
-    font-weight: 200;
-    margin: 0 0 20px;
-    color: rgba(black, .7);
-    text-shadow: 0 1px 0 rgba(white, .3);
-    text-align: center;
-    cursor: default;
+    background: lighten($light-grey, 9);
+    padding: 10px 20px;
+    margin-bottom: 2px;
+    border-radius: .4rem .4rem 0 0;
+
+    h3 {
+      font-weight: 400;
+      font-size: 1.2rem;
+      letter-spacing: -.02rem;
+      margin: 0;
+    }
+
+    p {
+      margin: .2rem 0 0;
+      color: #777;
+      font-size: .8rem;
+    }
+  }
+
+  > ._stage,
+  > ._source {
+    padding: 20px;
+
+    &::before {
+      display: block;
+      margin: 0 0 10px;
+      color: rgba(black, .2);
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
   }
 
   > ._stage {
-    background: white;
-    box-shadow: 0 1px 7px rgba(black, .1);
-    min-height: 200px;
+    $-component-color: rgba(#4868af, .2);
+    background: lighten($light-grey, 9);
+    border-bottom: 2px solid darken($light-grey, 5);
+
+    ._component {
+      margin: auto;
+      box-shadow: 0 0 0 2px $-component-color;
+      padding: 5px;
+    }
+
+    &::before {
+      color: $-component-color;
+      content: 'Component';
+    }
+  }
+
+  > ._source {
+    background: rgba(black, .03);
+
+    &::before {
+      content: 'HTML';
+    }
+
+    pre {
+      margin: 0;
+      font: 12px/1.4 Menlo, monospace;
+    }
   }
 }

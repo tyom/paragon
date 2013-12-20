@@ -1,0 +1,26 @@
+@import 'foundation/components/type';
+@import 'foundation/components/clearing';
+@import 'foundation/components/orbit';
+
+[data-clearing] {
+  padding: 0;
+
+  > li:hover {
+    box-shadow: 0 0 0 1px rgba(white, .8), 0 0 0 2px rgba(black, .2);
+  }
+}
+
+.example-orbit {
+  &,
+  > li {
+    height: 500px;
+  }
+
+  .img {
+    height: 100%;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50%;
+  }
+}

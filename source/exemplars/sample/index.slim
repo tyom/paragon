@@ -1,11 +1,17 @@
 ---
 title: Example
+description: A sample exemplar
+stylesheets:
+  - components/topbar
+  - components/subnav
 ---
 
-sass:
-  @import 'components'
+= exemplar_for 'topbar',
+    title: 'Top bar',
+    description: 'Navigation top bar',
+    data: load_yaml('~/prototypes/sample/topbar')
 
-= partial 'components/topbar',
-    locals: load_yaml('~/prototypes/sample/topbar')
-= partial 'components/subnav',
-    locals: load_yaml('~/prototypes/sample/subnav')
+= exemplar_for 'subnav',
+    title: 'Sub navigation',
+    data: load_yaml('~/prototypes/sample/subnav')
+

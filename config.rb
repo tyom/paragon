@@ -7,7 +7,11 @@ require 'lib/data_loaders'
 # Change Compass configuration
 compass_config do |config|
   config.add_import_path "bower_components/foundation/scss"
+  # For Style Guide CSS sources
+  # config.output_style = :expanded
 end
+
+Slim::Engine.set_default_options :pretty => true
 
 ###
 # Page options, layouts, aliases and proxies
@@ -16,9 +20,11 @@ end
 # Per-page layout changes:
 
 # With alternative layout
-page "/exemplars/*", :layout => :exemplar
+page "/exemplars/*/*", :layout => 'exemplar-page'
 # With no layout
+page "/partials/*", :layout => false
 page "*.css", :layout => false
+page "*.js", :layout => false
 
 # Meta redirects
 # redirect 'index.html', to: 'prototypes/sample'
@@ -37,12 +43,50 @@ page "*.css", :layout => false
 ###
 
 # Custom helpers
-# helpers do
-#   def customer_helper
-#   end
-# end
+helpers do
+  def subpages_for(dir, exclude_index = true)
+    sitemap.resources.select do |resource|
+      if exclude_index && ['/', "/#{dir}/"].include?(resource.url)
+        false
+      elsif resource.path.start_with?(dir) && resource.ext == '.html'
+        true
+      end
+    end
+  end
+
+  def exemplar_for(component_name=nil, options={}, &block)
+    meta = {
+      title: options.delete(:title),
+      description: options.delete(:description),
+      component_path: component_name ? "components/#{component_name}" : nil
+    }
+
+    options.reverse_merge!(meta: meta)
+
+    if data = options.delete(:data)
+      options.merge!(data)
+    end
+
+    if block_given?
+      options[:content] = capture_html(&block)
+    end
+
+    partial('exemplars/exemplar', :locals => options)
+  end
+
+  # Use in layouts, in templates either Frontmatter or this method can be used
+  def append_class(block_name, appended_classes='')
+    current_page_classes = current_page.data[block_name] || ''
+    existing_classes_a = current_page_classes.split(' ')
+    appended_classes_a = appended_classes.split(' ')
+    classes = existing_classes_a.concat(appended_classes_a).reverse.join(' ')
+    content_for(block_name, classes)
+  end
+end
 
 helpers DataLoaders
+
+activate :syntax, css_class: 'codehilite'
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
@@ -51,23 +95,29 @@ set :css_dir, 'stylesheets'
 set :js_dir, 'assets/javascripts'
 set :images_dir, 'assets/images'
 
-sprockets.append_path "bower_components/foundation/js"
-sprockets.append_path "bower_components/jquery"
+ready do
+  sprockets.append_path "bower_components/foundation/js"
+  sprockets.append_path "bower_components/jquery"
+  sprockets.append_path "bower_components"
+end
 
 configure :development do
-  Slim::Engine.set_default_options :pretty => true
-
   activate :livereload
 end
 
 # Build-specific configuration
 configure :build do
+  compass_config do |config|
+    config.sass_options = { :line_comments => false }
+  end
+
   # Middleman Livereload fails to reload CSS only with Sass partials.
   # It works correctly with non-underscore-prefixed
   # https://github.com/middleman/middleman-livereload/issues/3
 
   # Ignore partials for build
-  ignore 'stylesheets/components/*'
+  ignore 'stylesheets/components/**'
+  ignore 'bower_components/modernizr/**'
 
   # activate :directory_indexes
 

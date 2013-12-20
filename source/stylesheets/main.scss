@@ -1,8 +1,10 @@
 @import 'bourbon';
 @import 'normalize';
+@import 'foundation/components/global';
 
 .paragon-intro-page {
   background: #4d5a6d;
+  position: static;
 }
 
 .paragon-intro {

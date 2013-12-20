@@ -1,0 +1,38 @@
+<%#
+  Use ERB because middleman-syntax has a bug when using code blocks in Slim templates
+  https://github.com/middleman/middleman-syntax/issues/33
+%>
+
+<%
+  title = locals.meta.title || nil
+  description = locals.meta.description || nil
+%>
+
+<article class="exemplar">
+  <% if title || description %>
+    <header class="_title">
+      <% if title %>
+        <h3><%= title %></h3>
+      <% end %>
+      <% if description %>
+        <p><%= description %></p>
+      <% end %>
+    </header>
+  <% end %>
+  <section class="_stage <%= current_page.data.stage_class %>">
+    <div class="_component">
+      <% if locals.meta.component_path %>
+        <%= partial(locals.meta.component_path, locals: locals) %>
+      <% else %>
+        <%= locals[:content] %>
+      <% end %>
+    </div>
+  </section>
+  <section class="_source">
+    <% if locals.meta.component_path %>
+      <% code('html') do %><%= partial(locals.meta.component_path, locals: locals) %><% end %>
+    <% else %>
+        <% code('html') do %><%= locals[:content] %><% end %>
+    <% end %>
+  </section>
+</article>

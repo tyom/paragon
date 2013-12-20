@@ -1,0 +1,21 @@
+---
+title: All Exemplars
+layout: exemplar-page
+body_class: m-list
+stylesheets: []
+---
+
+- components = subpages_for('exemplars')
+
+- unless components.empty?
+    - components.each do |r|
+      / import stylesheets from individual resources
+      - current_page.data.stylesheets.concat(r.data.stylesheets).uniq! if r.data.stylesheets
+      section.exemplar-section
+        - if r.data.title || r.data.description
+          header
+            - if r.data.title
+              h2: a href="#{r.url}" = r.data.title
+            - if r.data.description
+              p= r.data.description
+        = r.render(layout: false)
