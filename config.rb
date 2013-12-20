@@ -6,7 +6,7 @@ require 'lib/data_loaders'
 
 # Change Compass configuration
 compass_config do |config|
-  config.add_import_path "bower_components/foundation/scss"
+  config.add_import_path 'bower_components/foundation/scss'
   # For Style Guide CSS sources
   # config.output_style = :expanded
 end
@@ -20,11 +20,11 @@ Slim::Engine.set_default_options :pretty => true
 # Per-page layout changes:
 
 # With alternative layout
-page "/exemplars/*/*", :layout => 'exemplar-page'
+page '/exemplars/*/*', :layout => 'exemplar-page'
 # With no layout
 page "/partials/*", :layout => false
-page "*.css", :layout => false
-page "*.js", :layout => false
+page '*.css', :layout => false
+page '*.js', :layout => false
 
 # Meta redirects
 # redirect 'index.html', to: 'prototypes/sample'
@@ -96,9 +96,9 @@ set :js_dir, 'assets/javascripts'
 set :images_dir, 'assets/images'
 
 ready do
-  sprockets.append_path "bower_components/foundation/js"
-  sprockets.append_path "bower_components/jquery"
-  sprockets.append_path "bower_components"
+  sprockets.append_path 'bower_components/foundation/js'
+  sprockets.append_path 'bower_components/jquery'
+  sprockets.append_path 'bower_components'
 end
 
 configure :development do
