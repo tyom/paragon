@@ -1,4 +1,4 @@
 nav
   ul
     - subpages_for(section).each do |r|
-      li(class="#{'s-selected' if r == current_page}"): a href="#{r.url}" = r.data.title
+      li(class="#{'s-selected' if r == current_page}")= link_to r.data.title, r.url

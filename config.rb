@@ -20,7 +20,7 @@ Slim::Engine.set_default_options :pretty => true
 # Per-page layout changes:
 
 # With alternative layout
-page '/exemplars/*/*', :layout => 'exemplar-page'
+page '/exemplars/**', :layout => 'exemplar-page'
 # With no layout
 page "/partials/*", :layout => false
 page '*.css', :layout => false
