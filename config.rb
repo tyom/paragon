@@ -94,6 +94,7 @@ activate :syntax, css_class: 'codehilite'
 set :css_dir, 'stylesheets'
 set :js_dir, 'assets/javascripts'
 set :images_dir, 'assets/images'
+set :relative_links, true
 
 ready do
   sprockets.append_path 'bower_components/foundation/js'
