@@ -8,7 +8,7 @@
   description = locals.meta.description || nil
 %>
 
-<article class="exemplar">
+<article class="exemplar" exemplar ng-cloak>
   <% if title || description %>
     <header class="_title">
       <% if title %>
@@ -19,20 +19,37 @@
       <% end %>
     </header>
   <% end %>
-  <section class="_stage <%= current_page.data.stage_class %>">
-    <div class="_component">
-      <% if locals.meta.component_path %>
-        <%= partial(locals.meta.component_path, locals: locals) %>
-      <% else %>
-        <%= locals[:content] %>
-      <% end %>
+  <section class="_stage <%= current_page.data.stage_class %>" react-to="small, medium, large, default">
+    <menu class="_options" ng-hide="!options">
+      <button class="_toggle"
+        ng-click="toggle(option)"
+        ng-repeat="option in options"
+        ng-class="{'__selected': option == selectedOption}">
+        {{option}}
+      </button>
+    </menu>
+    <div class="_view">
+      <div class="_component __{{selectedOption}}">
+        <% if locals.meta.component_path %>
+          <%= partial(locals.meta.component_path, locals: locals) %>
+        <% else %>
+          <%= locals[:content] %>
+        <% end %>
+      </div>
     </div>
   </section>
-  <section class="_source">
-    <% if locals.meta.component_path %>
-      <% code('html') do %><%= partial(locals.meta.component_path, locals: locals) %><% end %>
-    <% else %>
-        <% code('html') do %><%= locals[:content] %><% end %>
-    <% end %>
+  <section class="_source" ng-class="{'__expanded': expanded}" source>
+    <button class="_toggle"
+      ng-class="{'__toggled': expanded}"
+      ng-click="expanded = !expanded">
+      {{!expanded ? 'Show' : 'Hide'}} HTML</button>
+
+    <div class="_container">
+      <% if locals.meta.component_path %>
+        <% code('html') do %><%= partial(locals.meta.component_path, locals: locals) %><% end %>
+      <% else %>
+          <% code('html') do %><%= locals[:content] %><% end %>
+      <% end %>
+    </div>
   </section>
 </article>

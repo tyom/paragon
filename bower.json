@@ -4,6 +4,7 @@
   "private": "true",
   "dependencies": {
     "foundation": "~5.0.2",
-    "angular": "~1.2.2"
+    "angular": "~1.2.2",
+    "lodash": "*"
   }
 }

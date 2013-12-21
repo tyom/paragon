@@ -1,5 +1,5 @@
 doctype html
-html
+html(ng-app="exemplar")
   head
     meta charset='utf-8'
     title = current_page.data.title || 'Paragon'
@@ -12,6 +12,6 @@ html
   body class="#{yield_content(:body_class)}"
     = yield
 
-    = javascript_include_tag  'all'
+    = javascript_include_tag  'app'
     = javascript_include_tag current_page.data.javascripts if current_page.data.javascripts
     = yield_content :post_body
