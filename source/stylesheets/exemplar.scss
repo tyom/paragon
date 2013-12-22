@@ -4,6 +4,10 @@
 
 $light-grey: #dedce3;
 $sidebar-width: 200px;
+$exemplar-page-bgr-color: lighten($light-grey, 5);
+$component-color: rgba(#4868af, .2);
+
+@import 'exemplar/options-menu';
 
 .exemplar-page > .exemplar,
 .exemplar-page > .exemplars {
@@ -72,7 +76,7 @@ $sidebar-width: 200px;
 
 .exemplar-page {
   padding: 20px;
-  background: lighten($light-grey, 5);
+  background: $exemplar-page-bgr-color;
   padding-left: $sidebar-width + 20;
   color: #444;
 
@@ -160,7 +164,6 @@ $sidebar-width: 200px;
   }
 
   > ._stage {
-    $-component-color: rgba(#4868af, .2);
     background: lighten($light-grey, 9);
     padding: 20px;
 
@@ -171,7 +174,7 @@ $sidebar-width: 200px;
 
     ._component {
       @include transition(200ms max-width);
-      box-shadow: 0 0 0 2px $-component-color;
+      box-shadow: 0 0 0 2px $component-color;
       padding: 5px;
       background: white;
 
@@ -193,46 +196,8 @@ $sidebar-width: 200px;
     }
 
     &::before {
-      color: $-component-color;
+      color: $component-color;
       content: 'Component';
-    }
-
-    ._options {
-      padding: 0;
-      margin: -1.9rem 0 0;
-      line-height: 1rem;
-      float: right;
-
-      button {
-        font-size: .8rem;
-        background: none;
-        border: none;
-        padding: .2rem .5rem;
-        color: rgba($-component-color, .6);
-        background: lighten($-component-color, 25);
-        border-left: 1px solid lighten(rgba($-component-color, 1), 33);
-        outline: none;
-
-        &:first-child {
-          border: none;
-          border-radius: .3rem 0 0 .3rem;
-        }
-
-        &:last-child {
-          border-radius: 0 .3rem .3rem 0;
-        }
-
-        &:hover,
-        &:active {
-          color: lighten(rgba($-component-color, 1), 5);
-          background: lighten($-component-color, 10);
-        }
-
-        &:active,
-        &.__selected {
-          background: darken($-component-color, 8);
-        }
-      }
     }
   }
 
@@ -262,9 +227,7 @@ $sidebar-width: 200px;
     }
 
     > ._container {
-      @include transition(max-height 140ms);
-      overflow: hidden;
-      max-height: 0;
+      display: none;
       margin: 10px -20px 0;
       padding: 0 20px;
       border-top: 1px solid rgba(black, .08);
@@ -276,8 +239,7 @@ $sidebar-width: 200px;
     }
 
     &.__expanded > ._container {
-      max-height: 800px;
-      overflow: auto;
+      display: block;
       border-bottom: 1px solid rgba(black, .08);
     }
   }

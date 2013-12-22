@@ -9,7 +9,7 @@ stylesheets:
   title: 'Clearing',
   description: 'Example from <a href="http://foundation.zurb.com/docs/components/clearing.html">Foundation website</a>'
 
-  ul.clearing-thumbs(data-clearing)
+  ul.clearing-thumbs(modifiers="smaller thumbs:__smaller-thumbs, thumb outlines:__thumb-outlines" data-clearing)
     li
       a.th href="http://farm4.staticflickr.com/3607/3505221997_79a77b7c1e_b.jpg"
         img data-caption="The Lander Radio-Science on ExoMars, or LaRa, will use NASA’s Deep Space Network of radio telescopes to track part of ESA’s ExoMars mission." src="http://farm4.staticflickr.com/3607/3505221997_79a77b7c1e_s.jpg"
@@ -19,6 +19,7 @@ stylesheets:
     li
       a.th href="http://farm8.staticflickr.com/7099/6854389016_3518281437_h.jpg"
         img data-caption="NASA\'s Swift Narrows Down Origin of Important Supernova Class" src="http://farm8.staticflickr.com/7099/6854389016_ce4a6d8213_s.jpg"
+
 
 = exemplar_for nil,
   title: 'Orbit',

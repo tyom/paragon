@@ -3,8 +3,11 @@ title: Form Buttons
 description: A collection of simple form buttons
 ---
 
+scss:
+  @import 'components/buttons'
+
 = exemplar_for nil, title: 'Default button' do
-  button Submit
+  button(class="btn" modifiers="[larger:__larger, large:__large, medium:__medium, small:__small]") Submit
 
 = exemplar_for nil, title: 'Explicit button' do
-  button type="button" Submit
+  button class="btn" type="button" Submit

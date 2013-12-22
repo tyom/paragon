@@ -1,0 +1,17 @@
+<menu class="_options-menu" ng-if="options">
+  <li
+    ng-repeat="option in options"
+    ng-click="toggle(option)"
+    ng-class="{'__-active': option.active, '__is-group': option[0]}">
+    {{option.label}}
+
+    <menu ng-if="option[0]">
+      <li
+        ng-repeat="suboption in option"
+        ng-click="toggle(suboption, option)"
+        ng-class="{'__-active': suboption.active}">
+        {{suboption.label}}
+      </li>
+    </menu>
+  </li>
+</menu>

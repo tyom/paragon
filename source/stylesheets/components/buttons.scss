@@ -1,0 +1,105 @@
+@mixin button-init($antialiased: true, $cursor: pointer) {
+  padding: 0;
+  margin: 2px;
+  border: none;
+  background: none;
+  display: inline-block;
+  line-height: 1;
+  -webkit-font-smoothing: if($antialiased, antialiased, null);
+  cursor: $cursor;
+  position: relative;
+  font-size: 1em;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+@mixin button-padding($y: .36em, $x: .8em) {
+  padding: $y $x;
+}
+
+@mixin button-rounded($radius: .25em) {
+  border-radius: $radius;
+}
+
+@mixin button-color($background, $text: null, $has-states: true) {
+  color: $text;
+
+  &,
+  &[disabled]:hover,
+  &[disabled]:active {
+    background: $background;
+  }
+
+  @if(type-of($background) == color) {
+    &:hover {
+      background: darken($background, 5);
+    }
+    &:active {
+      background: darken($background, 15);
+    }
+  }
+}
+
+
+.btn {
+  @include button-init;
+  @include button-color(#ddd, #444);
+
+  &:not(.__bare) {
+    @include button-padding;
+  }
+
+  &.__plain {
+    @include button-color(none, #444);
+  }
+
+  &.__rounded {
+    @include button-rounded;
+  }
+
+  &.__small {
+    font-size: .9em;
+  }
+
+  &.__smaller {
+    font-size: .8em;
+  }
+
+  &.__medium {
+    font-size: 1.1em;
+  }
+
+  &.__large {
+    font-size: 1.3em;
+  }
+
+  &.__larger {
+    font-size: 1.6em;
+  }
+
+  &.__outlined {
+    &:hover {
+      box-shadow: inset 0 0 0 1px rgba(black, .1);
+    }
+
+    &,
+    &[disabled] {
+      box-shadow: inset 0 0 0 1px rgba(black, .05);
+    }
+  }
+
+  &.__primary {
+    @include button-color(#30cb8a, white);
+    font-size: 1.2em;
+  }
+
+  &.__secondary {
+    @include button-color(#5766d7, white);
+    font-size: 1.1em;
+  }
+
+  &[disabled] {
+    opacity: .4;
+    cursor: default;
+  }
+}

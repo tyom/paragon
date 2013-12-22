@@ -1,3 +1,5 @@
+@import 'bourbon';
+
 @import 'foundation/components/type';
 @import 'foundation/components/clearing';
 @import 'foundation/components/orbit';
@@ -7,6 +9,29 @@
 
   > li:hover {
     box-shadow: 0 0 0 1px rgba(white, .8), 0 0 0 2px rgba(black, .2);
+  }
+}
+
+.clearing-thumbs {
+  .th {
+    display: block;
+  }
+
+  &.__smaller-thumbs {
+    .th {
+      @include size(40);
+    }
+  }
+
+  &.__thumb-outlines {
+    .th {
+      outline: 1px solid white;
+      box-shadow: 0 0 0 3px #ccc;
+
+      &:hover {
+        box-shadow: 0 0 0 3px #aaa;
+      }
+    }
   }
 }
 

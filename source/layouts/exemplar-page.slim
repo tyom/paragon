@@ -6,7 +6,7 @@
 - wrap_layout :layout do
   = partial 'exemplars/nav', locals: { section: 'exemplars' }
 
-  section.exemplar-container
+  section.exemplar-container(ng-controller="Exemplars")
     header
       h1= current_page.data.title
       p= current_page.data.description
