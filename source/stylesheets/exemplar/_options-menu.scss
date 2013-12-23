@@ -12,6 +12,14 @@
   line-height: 1;
   font-size: 12px;
 
+  > label {
+    float: left;
+    padding: 6px;
+    font-size: .9em;
+    color: darken($exemplar-page-bgr-color, 17);
+    text-shadow: 0 1px 0 rgba(white, .4);
+  }
+
   li, menu {
     float: left;
     list-style: none;
@@ -43,11 +51,18 @@
     &:active {
       background: lighten(rgba($component-color, 1), 25);
       box-shadow: inset 0 0 1px 1px rgba(black, .1);
-      color: white;
     }
 
     &:active {
-      background: lighten(rgba($component-color, 1), 20);
+      background: lighten(rgba($component-color, 1), 35);
+    }
+
+    &.__-active {
+      color: white;
+
+      &:active {
+        background: lighten(rgba($component-color, 1), 20);
+      }
     }
   }
 

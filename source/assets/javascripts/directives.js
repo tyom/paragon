@@ -57,8 +57,9 @@ angular.module('directives', [])
       restrict: 'A',
       controller: function($scope, $element, $attrs) {
         $scope.options = $scope.options || {};
-        var elOptions = {};
+        $scope.menuLabel = 'Modifiers';
 
+        var elOptions = {};
         try {
           elOptions = $scope.$parent.parseRules($attrs.modifiers);
           $element.attr('data-exemplar-id', $scope.$id);

@@ -1,4 +1,5 @@
-<menu class="_options-menu" ng-if="options">
+<menu class="_options-menu" ng-if="options" type="toolbar">
+  <label ng-if="menuLabel">{{menuLabel}}</label>
   <li
     ng-repeat="option in options"
     ng-click="toggle(option)"
