@@ -79,7 +79,7 @@ Exemplars are included on page by using a special helper, see example (Slim):
 
 **Include inline in a block***
 ```slim
-= exemplar_for nil,
+= exemplar \
   title: 'Radio buttons' do
   erb:
     <p>
@@ -95,14 +95,14 @@ Exemplars are included on page by using a special helper, see example (Slim):
 Exemplars also come with a way to configure modifier classes on components.
 
 ```slim
-= exemplar_for nil, title: 'Default button' do
+= exemplar title: 'Default button' do
   button(class="btn" modifiers="[larger:__larger, large:__large, medium:__medium, small:__small]") Submit
 ```
 
 In ERB it looks like this:
 
 ```erb
-<%= exemplar_for nil, title: 'Default button' do %>
+<%= exemplar title: 'Default button' do %>
   <button class="btn" modifiers="[larger:__larger, large:__large, medium:__medium, small:__small]">Submit</button>
 <% end %>
 ```

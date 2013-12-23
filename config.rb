@@ -54,7 +54,7 @@ helpers do
     end
   end
 
-  def exemplar_for(component_name=nil, options={}, &block)
+  def exemplar_for(component_name=nil, options={})
     meta = {
       title: options.delete(:title),
       description: options.delete(:description),
@@ -67,11 +67,17 @@ helpers do
       options.merge!(data)
     end
 
+    partial('exemplars/exemplar', :locals => options)
+  end
+
+  def exemplar(options={}, &block)
     if block_given?
       options[:content] = capture_html(&block)
+    else
+      raise "Exemplar ‘#{options[:title]}’: No HTML block given"
     end
 
-    partial('exemplars/exemplar', :locals => options)
+    exemplar_for nil, options
   end
 
   # Use in layouts, in templates either Frontmatter or this method can be used
