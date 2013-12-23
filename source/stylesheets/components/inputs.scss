@@ -1,0 +1,19 @@
+@import 'bourbon';
+
+input {
+  border: 2px solid #ccc;
+  outline: none;
+  padding: 5px;
+
+  &:focus {
+    border-color: rgba(#5d90ff, .8);
+  }
+
+  &.__radius {
+    border-radius: .3rem;
+  }
+
+  @include placeholder {
+    color: #ddd;
+  }
+}

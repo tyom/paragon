@@ -3,7 +3,14 @@ title: Form Inputs
 description: Typical form inputs
 ---
 
-= exemplar_for 'form/input', title: 'Text input'
+scss:
+  .exemplar ._component {
+    @import 'components/inputs';
+  }
+
+= exemplar_for 'form/input',
+  title: 'Text input',
+  attrs: { placeholder: 'Enter your name', modifiers: '__radius' }
 
 = exemplar title: 'Radio buttons' do
   erb:
