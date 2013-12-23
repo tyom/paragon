@@ -34,14 +34,17 @@
     <button class="_toggle"
       ng-class="{'__toggled': expanded}"
       ng-click="expanded = !expanded">
-      {{!expanded ? 'Show' : 'Hide'}} HTML</button>
+      HTML source
+    </button>
 
     <div class="_container">
-      <% if locals.meta.component_path %>
-        <% code('html') do %><%= partial(locals.meta.component_path, locals: locals) %><% end %>
-      <% else %>
-          <% code('html') do %><%= locals[:content] %><% end %>
-      <% end %>
+      <% if locals.meta.component_path
+           html = partial(locals.meta.component_path, locals: locals)
+         else
+           html = locals[:content]
+         end
+      %>
+      <% code('html') { html } %>
     </div>
   </section>
 </article>
