@@ -119,3 +119,5 @@ This will create one group of buttons which controls the size and another button
 There is a `name:value` syntax. For example, `special version of a component:special` will have the text label on the button and toggle `special` class name.
 
 See [more examples](http://tyom.github.io/paragon/exemplars/).
+
+![](https://ga-beacon.appspot.com/UA-332655-4/paragon/readme?pixel)
