@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html ng-app="exemplar">
+  <head>
+    <meta charset="utf-8" />
+    <title>Example</title>
+    <meta content="width=device-width" name="viewport" />
+    <link href="../stylesheets/main.css" media="screen" rel="stylesheet" type="text/css" /><script src="../assets/javascripts/modernizr.js" type="text/javascript"></script><link href="../stylesheets/exemplar.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../bower_components/highlightjs/styles/github.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="exemplar-page"><nav>
+  <ul>
+    <li>
+      <a href="forms/buttons.html">Buttons</a>
+    </li>
+    <li>
+      <a href="forms/inputs.html">Form Inputs</a>
+    </li>
+    <li>
+      <a href="foundation/media.html">Foundation: Media Components</a>
+    </li>
+    <li>
+      <a href="foundation/navigation.html">Foundation: Navigational Components</a>
+    </li>
+    <li class="s-selected">
+      <a href="sample.html">Example</a>
+    </li>
+  </ul>
+</nav>
+<section class="exemplar-container" ng-controller="Exemplars">
+  <header>
+    <h1>
+      Example
+    </h1>
+    <p>
+      A sample exemplar
+    </p>
+  </header><style type="text/css">
+  .topbar {
+    *zoom: 1;
+    background: rgba(0, 0, 0, 0.2); }
+    .topbar:before, .topbar:after {
+      content: " ";
+      display: table; }
+    .topbar:after {
+      clear: both; }
+    .topbar ._name {
+      font-size: 18px;
+      margin-right: 20px;
+      padding: 10px 30px; }
+    .topbar ._navigation {
+      list-style: none;
+      margin: 0;
+      padding: 0; }
+      .topbar ._navigation a:hover {
+        background: rgba(0, 0, 0, 0.05); }
+    .topbar ._name,
+    .topbar ._navigation,
+    .topbar ._navigation li {
+      float: left; }
+    .topbar a {
+      padding: 10px;
+      line-height: 20px;
+      display: block;
+      cursor: pointer;
+      color: #555; }
+      .topbar a:hover {
+        color: #333; }
+  
+  .subnav {
+    padding: 10px 20px;
+    cursor: default; }
+    .subnav ._label {
+      color: #999; }
+    .subnav dt,
+    .subnav dd {
+      display: inline-block; }
+    .subnav dd {
+      margin: 0 0 0 10px; }
+    .subnav a {
+      cursor: pointer;
+      padding: 5px 10px;
+      color: #555; }
+      .subnav a:hover {
+        background: rgba(0, 0, 0, 0.1);
+        color: #333; }
+</style>
+
+
+
+<article class="exemplar" ng-cloak>
+  
+    <header class="_title">
+      
+        <h3>Top bar</h3>
+      
+      
+        <p>Navigation top bar</p>
+      
+    </header>
+  
+  <section class="_stage ">
+    <div class="_view">
+      <div class="component">
+        <nav class="topbar">
+  <a class="_name">Title</a>
+  <ul class="_navigation">
+    <li>
+      <a>Item 1</a>
+    </li>
+    <li>
+      <a>Item 2</a>
+    </li>
+    <li>
+      <a>Item 3</a>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </section>
+  <section class="source" ng-class="{'__expanded': expanded !== false}" source>
+    <button class="_toggle"
+      ng-class="{'__toggled': expanded !== false}"
+      ng-click="expanded = !expanded">
+      HTML source
+    </button>
+    <pre><code class="xml" ng-bind-html="source" contenteditable></code></pre>
+  </section>
+</article>
+
+
+
+
+<article class="exemplar" ng-cloak>
+  
+    <header class="_title">
+      
+        <h3>Sub navigation</h3>
+      
+      
+    </header>
+  
+  <section class="_stage ">
+    <div class="_view">
+      <div class="component">
+        <dl class="subnav">
+  <dt class="_label">
+    Filter:
+  </dt>
+  <dd>
+    <a>Total</a>
+  </dd>
+  <dd>
+    <a>Low</a>
+  </dd>
+  <dd>
+    <a>High</a>
+  </dd>
+</dl>
+      </div>
+    </div>
+  </section>
+  <section class="source" ng-class="{'__expanded': expanded !== false}" source>
+    <button class="_toggle"
+      ng-class="{'__toggled': expanded !== false}"
+      ng-click="expanded = !expanded">
+      HTML source
+    </button>
+    <pre><code class="xml" ng-bind-html="source" contenteditable></code></pre>
+  </section>
+</article>
+
+</section><script src="../assets/javascripts/app.js" type="text/javascript"></script>
+  </body>
+</html>

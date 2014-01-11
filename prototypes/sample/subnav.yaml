@@ -1,0 +1,5 @@
+label: "Filter:"
+nav_items:
+  - Total
+  - Low
+  - High

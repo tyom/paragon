@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html ng-app="exemplar">
+  <head>
+    <meta charset="utf-8" />
+    <title>Foundation: Navigational Components</title>
+    <meta content="width=device-width" name="viewport" />
+    <link href="../../stylesheets/main.css" media="screen" rel="stylesheet" type="text/css" /><link href="navigation.css" media="screen" rel="stylesheet" type="text/css" /><script src="../../assets/javascripts/modernizr.js" type="text/javascript"></script><link href="../../stylesheets/exemplar.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../../bower_components/highlightjs/styles/github.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="exemplar-page"><nav>
+  <ul>
+    <li>
+      <a href="../forms/buttons.html">Buttons</a>
+    </li>
+    <li>
+      <a href="../forms/inputs.html">Form Inputs</a>
+    </li>
+    <li>
+      <a href="media.html">Foundation: Media Components</a>
+    </li>
+    <li class="s-selected">
+      <a href="navigation.html">Foundation: Navigational Components</a>
+    </li>
+    <li>
+      <a href="../sample.html">Example</a>
+    </li>
+  </ul>
+</nav>
+<section class="exemplar-container" ng-controller="Exemplars">
+  <header>
+    <h1>
+      Foundation: Navigational Components
+    </h1>
+    <p>
+      
+    </p>
+  </header>
+
+
+
+<article class="exemplar" ng-cloak>
+  
+    <header class="_title">
+      
+        <h3>Off Canvas</h3>
+      
+      
+        <p>Example from <a href="http://foundation.zurb.com/docs/components/offcanvas.html">Foundation website</a></p>
+      
+    </header>
+  
+  <section class="_stage ">
+    <div class="_view">
+      <div class="component">
+        <div class="off-canvas-wrap docs-wrap">
+  <div class="inner-wrap">
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon"><span></span></a>
+      </section>
+      <section class="right tab-bar-section">
+        <h1 class="title">
+          Foundation
+        </h1>
+      </section>
+    </nav>
+    <aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+        <li>
+          <label>Foundation</label>
+        </li>
+        <li>
+          <a>The Psychohistorians</a>
+        </li>
+        <li>
+          <a>The Encyclopedists</a>
+        </li>
+        <li>
+          <a>The Mayors</a>
+        </li>
+        <li>
+          <a>The Traders</a>
+        </li>
+        <li>
+          <a>The Merchant Princes</a>
+        </li>
+        <li>
+          <label>Foundation and Empire</label>
+        </li>
+        <li>
+          <a>The General</a>
+        </li>
+        <li>
+          <a>The Mule</a>
+        </li>
+        <li>
+          <label>Second Foundation</label>
+        </li>
+        <li>
+          <a>Search by the Mule</a>
+        </li>
+        <li>
+          <a>Search by the Foundation</a>
+        </li>
+      </ul>
+    </aside>
+    <section class="main-section">
+      <div class="row">
+        <div class="large-12 columns">
+          <br>
+            <h4>
+              The Psychohistorians
+            </h4>
+            <p>
+              Set in the year 0 F.E. ("Foundation Era"), The Psychohistorians opens on Trantor, the capital of the 12,000-year-old Galactic Empire. Though the empire appears stable and powerful, it is slowly decaying in ways that parallel the decline of the Western Roman Empire. Hari Seldon, a mathematician and psychologist, has developed psychohistory, a new field of science and psychology that equates all possibilities in large societies to mathematics, allowing for the prediction of future events.
+            </p>
+            <p>
+              Using psychohistory, Seldon has discovered the declining nature of the Empire, angering the aristocratic members of the Committee of Public Safety, the de facto rulers of the Empire. The Committee considers Seldon's views and statements treasonous, and he is arrested along with young mathematician Gaal Dornick, who has arrived on Trantor to meet Seldon. Seldon is tried by the Committee and defends his beliefs, explaining his theories and predictions, including his belief that the Empire will collapse in 500 years and enter a 30,000-year dark age, to the Committee's members.
+            </p>
+          </br>
+        </div>
+      </div>
+    </section>
+    <a class="exit-off-canvas"></a>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+  <section class="source" ng-class="{'__expanded': expanded !== false}" source>
+    <button class="_toggle"
+      ng-class="{'__toggled': expanded !== false}"
+      ng-click="expanded = !expanded">
+      HTML source
+    </button>
+    <pre><code class="xml" ng-bind-html="source" contenteditable></code></pre>
+  </section>
+</article>
+
+
+
+
+<article class="exemplar" ng-cloak>
+  
+    <header class="_title">
+      
+        <h3>Top Bar</h3>
+      
+      
+        <p>example from <a href="http://foundation.zurb.com/docs/components/topbar.html">Foundation website</a></p>
+      
+    </header>
+  
+  <section class="_stage ">
+    <div class="_view">
+      <div class="component">
+        <nav class="top-bar" data-topbar="">
+  <ul class="title-area">
+    <li class="name">
+      <h1>
+        <a>My Site</a>
+      </h1>
+    </li>
+    <li class="toggle-topbar menu-icon">
+      <a><span>Menu</span></a>
+    </li>
+  </ul>
+  <section class="top-bar-section">
+    <ul class="right">
+      <li class="active">
+        <a>Right Nav Button Active</a>
+      </li>
+      <li class="has-dropdown">
+        <a>Right Button with Dropdown</a>
+        <ul class="dropdown">
+          <li>
+            <a>First link in dropdown</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="left">
+      <li>
+        <a>Left Nav Button</a>
+      </li>
+    </ul>
+  </section>
+</nav>
+      </div>
+    </div>
+  </section>
+  <section class="source" ng-class="{'__expanded': expanded !== false}" source>
+    <button class="_toggle"
+      ng-class="{'__toggled': expanded !== false}"
+      ng-click="expanded = !expanded">
+      HTML source
+    </button>
+    <pre><code class="xml" ng-bind-html="source" contenteditable></code></pre>
+  </section>
+</article>
+
+
+
+
+<article class="exemplar" ng-cloak>
+  
+    <header class="_title">
+      
+        <h3>Side Nav</h3>
+      
+      
+        <p>Example from <a href="http://foundation.zurb.com/docs/components/sidenav.html">Foundation website</a></p>
+      
+    </header>
+  
+  <section class="_stage ">
+    <div class="_view">
+      <div class="component">
+        <ul class="side-nav">
+  <li>
+    <a>Link 1</a>
+  </li>
+  <li>
+    <a>Link 2</a>
+  </li>
+  <li>
+    <a>Link 3</a>
+  </li>
+  <li>
+    <a>Link 4</a>
+  </li>
+  <li>
+    <a>Link 5</a>
+  </li>
+</ul>
+      </div>
+    </div>
+  </section>
+  <section class="source" ng-class="{'__expanded': expanded !== false}" source>
+    <button class="_toggle"
+      ng-class="{'__toggled': expanded !== false}"
+      ng-click="expanded = !expanded">
+      HTML source
+    </button>
+    <pre><code class="xml" ng-bind-html="source" contenteditable></code></pre>
+  </section>
+</article>
+
+
+
+
+<article class="exemplar" ng-cloak>
+  
+    <header class="_title">
+      
+        <h3>Sub Nav</h3>
+      
+      
+        <p>Example from <a href="http://foundation.zurb.com/docs/components/subnav.html">Foundation website</a></p>
+      
+    </header>
+  
+  <section class="_stage ">
+    <div class="_view">
+      <div class="component">
+        <dl class="sub-nav">
+  <dt>
+    Filter:
+  </dt>
+  <dd class="active">
+    <a>All</a>
+  </dd>
+  <dd>
+    <a>Active</a>
+  </dd>
+  <dd>
+    <a>Pending</a>
+  </dd>
+  <dd>
+    <a>Suspended</a>
+  </dd>
+</dl>
+      </div>
+    </div>
+  </section>
+  <section class="source" ng-class="{'__expanded': expanded !== false}" source>
+    <button class="_toggle"
+      ng-class="{'__toggled': expanded !== false}"
+      ng-click="expanded = !expanded">
+      HTML source
+    </button>
+    <pre><code class="xml" ng-bind-html="source" contenteditable></code></pre>
+  </section>
+</article>
+
+
+
+
+<article class="exemplar" ng-cloak>
+  
+    <header class="_title">
+      
+        <h3>Breadcrumbs</h3>
+      
+      
+        <p>Example from <a href="http://foundation.zurb.com/docs/components/subnav.html">Foundation website</a></p>
+      
+    </header>
+  
+  <section class="_stage ">
+    <div class="_view">
+      <div class="component">
+        
+<ul class="breadcrumbs">
+  <li>
+    <a>Home</a>
+  </li>
+  <li>
+    <a>Features</a>
+  </li>
+  <li class="unavailable">
+    <a>Gene Splicing</a>
+  </li>
+  <li class="current">
+    <a>Cloning</a>
+  </li>
+</ul>
+      </div>
+    </div>
+  </section>
+  <section class="source" ng-class="{'__expanded': expanded !== false}" source>
+    <button class="_toggle"
+      ng-class="{'__toggled': expanded !== false}"
+      ng-click="expanded = !expanded">
+      HTML source
+    </button>
+    <pre><code class="xml" ng-bind-html="source" contenteditable></code></pre>
+  </section>
+</article>
+
+
+
+
+<article class="exemplar" ng-cloak>
+  
+    <header class="_title">
+      
+        <h3>Pagination</h3>
+      
+      
+        <p>Example from <a href="http://foundation.zurb.com/docs/components/pagination.html">Foundation website</a></p>
+      
+    </header>
+  
+  <section class="_stage ">
+    <div class="_view">
+      <div class="component">
+        
+<ul class="pagination">
+  <li class="arrow unavailable">
+    <a>&laquo;</a>
+  </li>
+  <li class="current">
+    <a>1</a>
+  </li>
+  <li>
+    <a>2</a>
+  </li>
+  <li>
+    <a>3</a>
+  </li>
+  <li>
+    <a>4</a>
+  </li>
+  <li class="unavailable">
+    <a>&hellip;</a>
+  </li>
+  <li>
+    <a>12</a>
+  </li>
+  <li>
+    <a>13</a>
+  </li>
+  <li class="arrow">
+    <a>&raquo;</a>
+  </li>
+</ul>
+      </div>
+    </div>
+  </section>
+  <section class="source" ng-class="{'__expanded': expanded !== false}" source>
+    <button class="_toggle"
+      ng-class="{'__toggled': expanded !== false}"
+      ng-click="expanded = !expanded">
+      HTML source
+    </button>
+    <pre><code class="xml" ng-bind-html="source" contenteditable></code></pre>
+  </section>
+</article>
+
+</section><script src="../../assets/javascripts/app.js" type="text/javascript"></script>
+  </body>
+</html>

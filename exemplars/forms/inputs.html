@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html ng-app="exemplar">
+  <head>
+    <meta charset="utf-8" />
+    <title>Form Inputs</title>
+    <meta content="width=device-width" name="viewport" />
+    <link href="../../stylesheets/main.css" media="screen" rel="stylesheet" type="text/css" /><script src="../../assets/javascripts/modernizr.js" type="text/javascript"></script><link href="../../stylesheets/exemplar.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../../bower_components/highlightjs/styles/github.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="exemplar-page"><nav>
+  <ul>
+    <li>
+      <a href="buttons.html">Buttons</a>
+    </li>
+    <li class="s-selected">
+      <a href="inputs.html">Form Inputs</a>
+    </li>
+    <li>
+      <a href="../foundation/media.html">Foundation: Media Components</a>
+    </li>
+    <li>
+      <a href="../foundation/navigation.html">Foundation: Navigational Components</a>
+    </li>
+    <li>
+      <a href="../sample.html">Example</a>
+    </li>
+  </ul>
+</nav>
+<section class="exemplar-container" ng-controller="Exemplars">
+  <header>
+    <h1>
+      Form Inputs
+    </h1>
+    <p>
+      Typical form inputs
+    </p>
+  </header><style type="text/css">
+  .component input {
+    border: 2px solid #ccc;
+    outline: none;
+    padding: 5px; }
+    .component input:focus {
+      border-color: rgba(93, 144, 255, 0.8); }
+    .component input.__radius {
+      border-radius: .5rem; }
+    .component input::-webkit-input-placeholder {
+      color: #ddd; }
+    .component input:-moz-placeholder {
+      color: #ddd; }
+    .component input::-moz-placeholder {
+      color: #ddd; }
+    .component input:-ms-input-placeholder {
+      color: #ddd; }
+</style>
+
+
+
+<article class="exemplar" ng-cloak>
+  
+    <header class="_title">
+      
+        <h3>Text input</h3>
+      
+      
+    </header>
+  
+  <section class="_stage ">
+    <div class="_view">
+      <div class="component">
+        <input modifiers="__radius" placeholder="Enter your name" type="text" />
+      </div>
+    </div>
+  </section>
+  <section class="source" ng-class="{'__expanded': expanded !== false}" source>
+    <button class="_toggle"
+      ng-class="{'__toggled': expanded !== false}"
+      ng-click="expanded = !expanded">
+      HTML source
+    </button>
+    <pre><code class="xml" ng-bind-html="source" contenteditable></code></pre>
+  </section>
+</article>
+
+
+
+
+<article class="exemplar" ng-cloak>
+  
+    <header class="_title">
+      
+        <h3>Radio buttons</h3>
+      
+      
+    </header>
+  
+  <section class="_stage ">
+    <div class="_view">
+      <div class="component">
+        <p>
+  <input type="radio" name="vote" id="agree">
+  <label for="agree">Agree</label>
+</p>
+<p>
+  <input type="radio" name="vote" id="disagree">
+  <label for="disagree">Disagree</label>
+</p>
+      </div>
+    </div>
+  </section>
+  <section class="source" ng-class="{'__expanded': expanded !== false}" source>
+    <button class="_toggle"
+      ng-class="{'__toggled': expanded !== false}"
+      ng-click="expanded = !expanded">
+      HTML source
+    </button>
+    <pre><code class="xml" ng-bind-html="source" contenteditable></code></pre>
+  </section>
+</article>
+
+</section><script src="../../assets/javascripts/app.js" type="text/javascript"></script>
+  </body>
+</html>

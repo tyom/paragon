@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html ng-app="exemplar">
+  <head>
+    <meta charset="utf-8" />
+    <title>Buttons</title>
+    <meta content="width=device-width" name="viewport" />
+    <link href="../../stylesheets/main.css" media="screen" rel="stylesheet" type="text/css" /><script src="../../assets/javascripts/modernizr.js" type="text/javascript"></script><link href="../../stylesheets/exemplar.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../../bower_components/highlightjs/styles/github.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="exemplar-page"><nav>
+  <ul>
+    <li class="s-selected">
+      <a href="buttons.html">Buttons</a>
+    </li>
+    <li>
+      <a href="inputs.html">Form Inputs</a>
+    </li>
+    <li>
+      <a href="../foundation/media.html">Foundation: Media Components</a>
+    </li>
+    <li>
+      <a href="../foundation/navigation.html">Foundation: Navigational Components</a>
+    </li>
+    <li>
+      <a href="../sample.html">Example</a>
+    </li>
+  </ul>
+</nav>
+<section class="exemplar-container" ng-controller="Exemplars">
+  <header>
+    <h1>
+      Buttons
+    </h1>
+    <p>
+      
+    </p>
+  </header><style type="text/css">
+  .btn {
+    padding: 0;
+    margin: 2px;
+    border: none;
+    background: none;
+    display: inline-block;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    position: relative;
+    font-size: 1em;
+    text-decoration: none;
+    vertical-align: middle;
+    color: #444444; }
+    .btn, .btn[disabled]:hover, .btn[disabled]:active {
+      background: #dddddd; }
+    .btn:hover {
+      background: #d0d0d0; }
+    .btn:active {
+      background: #b7b7b7; }
+    .btn:not(.__bare) {
+      padding: 0.36em 0.8em; }
+    .btn.__plain {
+      color: #444444; }
+      .btn.__plain, .btn.__plain[disabled]:hover, .btn.__plain[disabled]:active {
+        background: none; }
+    .btn.__rounded {
+      border-radius: 0.25em; }
+    .btn.__small {
+      font-size: .9em; }
+    .btn.__smaller {
+      font-size: .8em; }
+    .btn.__medium {
+      font-size: 1.1em; }
+    .btn.__large {
+      font-size: 1.3em; }
+    .btn.__larger {
+      font-size: 1.6em; }
+    .btn.__outlined:hover {
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3); }
+    .btn.__outlined, .btn.__outlined[disabled] {
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2); }
+    .btn.__primary {
+      color: white; }
+      .btn.__primary, .btn.__primary[disabled]:hover, .btn.__primary[disabled]:active {
+        background: #30cb8a; }
+      .btn.__primary:hover {
+        background: #2bb67c; }
+      .btn.__primary:active {
+        background: #218d60; }
+    .btn.__secondary {
+      color: white; }
+      .btn.__secondary, .btn.__secondary[disabled]:hover, .btn.__secondary[disabled]:active {
+        background: #5766d7; }
+      .btn.__secondary:hover {
+        background: #4253d2; }
+      .btn.__secondary:active {
+        background: #2b3cb6; }
+    .btn[disabled] {
+      opacity: .4;
+      cursor: default; }
+</style>
+
+
+
+<article class="exemplar" ng-cloak>
+  
+    <header class="_title">
+      
+        <h3>Default button</h3>
+      
+      
+    </header>
+  
+  <section class="_stage ">
+    <div class="_view">
+      <div class="component">
+        
+<button class="btn" modifiers="[large:__large, medium:__medium, small:__small], [primary:__primary, secondary:__secondary], outlined:__outlined, rounded:__rounded">Submit</button>
+      </div>
+    </div>
+  </section>
+  <section class="source" ng-class="{'__expanded': expanded !== false}" source>
+    <button class="_toggle"
+      ng-class="{'__toggled': expanded !== false}"
+      ng-click="expanded = !expanded">
+      HTML source
+    </button>
+    <pre><code class="xml" ng-bind-html="source" contenteditable></code></pre>
+  </section>
+</article>
+
+
+
+
+<article class="exemplar" ng-cloak>
+  
+    <header class="_title">
+      
+        <h3>Explicit button</h3>
+      
+      
+    </header>
+  
+  <section class="_stage ">
+    <div class="_view">
+      <div class="component">
+        <button class="btn" type="button">Submit</button>
+      </div>
+    </div>
+  </section>
+  <section class="source" ng-class="{'__expanded': expanded !== false}" source>
+    <button class="_toggle"
+      ng-class="{'__toggled': expanded !== false}"
+      ng-click="expanded = !expanded">
+      HTML source
+    </button>
+    <pre><code class="xml" ng-bind-html="source" contenteditable></code></pre>
+  </section>
+</article>
+
+</section><script src="../../assets/javascripts/app.js" type="text/javascript"></script>
+  </body>
+</html>
